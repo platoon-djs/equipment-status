@@ -70,11 +70,15 @@ def saveToCsvFile():
 # Reads the reports list from a CSV file
 def readCsvFile():
 	results = []
-	file = open(app.config['CSV_FILE'], "r")
-	reader = csv.reader(file)
-	for row in reader:
-		results.append (row)
+	try:
+		file = open(app.config['CSV_FILE'], 'r')
+		reader = csv.reader(file)
+		for row in reader:
+			results.append (row)
+	except FileNotFoundError:
+		file = open(app.config['CSV_FILE'], 'w')
 	return results
+	
 
 # Server start
 if __name__ == "__main__":
