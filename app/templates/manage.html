@@ -1,0 +1,55 @@
+{% extends "template.html" %}
+
+{% block message %}
+	{% if message is defined %}
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".message").show();
+				$('.message').delay(4000).fadeOut('slow');
+			});
+		</script>
+		{{message}} unit "{{report[1]}}"
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	<h2> Add new report </h2>
+	<form method="POST">
+	    Unit: <input name="unit" placeholder="Ex: CDJ 2000" required> &nbsp&nbsp&nbsp
+	    Status:
+		<select name="status" required>
+			<option value="" selected disabled hidden>Select status</option>
+			{% for option in status_options %}
+				<option value="{{option}}">{{option}}</option>
+			{% endfor %}
+		</select> &nbsp&nbsp&nbsp
+	    Description: <input name="desc" placeholder="Ex: Cue button laggy" required> &nbsp&nbsp&nbsp
+	    <button type="submit" name="btn" value="add">Add</button>
+	</form> <br>
+
+	<h2> Manage live reports </h2>
+	<table>
+		<tr>
+			<th style="width: 15px;">ID</th>
+		    <th style="width: 18%;">Unit</th>
+		    <th style="width: 130px;">Status</th>
+		    <th >Description</th>
+		    <th style="width: 85px;">Date</th>
+		    <th style="width: 100px;">Manage</th>
+		</tr>
+		{% for row in reports %}
+			<tr>
+				{% for item in row %}
+					<td>{{item}}</td>
+				{% endfor %}
+				<td>
+					<form method="POST">
+						<input type="hidden" name="report" value="{{row}}">
+						<button type="submit" name="btn" value="edit">Edit</button>
+						<button type="submit" name="btn" value="remove">Remove</button>
+					</form>
+				</td>
+			</tr>
+		{% endfor %}
+	</table> 
+{% endblock %}

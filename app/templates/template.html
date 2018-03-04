@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Equipment Status - Platoon DJs</title>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- <script src="{{ url_for('static',filename='jquery.js') }}"></script> -->
+	</head>
+	<body>
+		<div class="message">
+			{% block message %}{% endblock %}
+		</div>
+		<div class="header">
+			<h1><a href="/">Equipment Status - Platoon DJs</a></h1>
+		</div>
+		<div class="content">
+			<div class="content-header">
+				{% block content_header %}{% endblock %}
+			</div>
+			<div class="paragraph">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+		<div class="footer">
+	      	{% block footer %}
+	      		&copy; Copyright 2018 by <a href="https://awide.se/"><b>Arvid Widerberg</b></a>.
+	      	{% endblock %}
+	    </div>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% block content_header %}
+	<h2> Current status</h2>
+{% endblock %}
+{% block content %}
+<table>
+	<tr>
+		<th style="width: 15px;">ID</th>
+	    <th style="width: 18%;">Unit</th>
+	    <th style="width: 130px;">Status</th>
+	    <th>Description</th>
+	    <th style="width: 85px;">Date</th>
+	 </tr>
+	{% for report in reports %}
+		<tr>
+		{% for item in report %}
+			<td>{{item}}</td>
+		{% endfor %}
+		</tr>
+	{% endfor %}
+</table>
+{% endblock %}

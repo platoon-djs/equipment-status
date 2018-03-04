@@ -1,0 +1,90 @@
+/* Color scheme generated from: https://coolors.co/75b9be-a8ccc9-b3d6c6-dceab2-c7d66d */
+html {
+	background: #B3D6C6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #75B9BE, #C7D66D);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #75B9BE, #C7D66D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+    text-align: center;
+    font-family: Helvetica, Arial, Verdana;
+    color: #fff;
+    font-weight: normal;
+}
+
+.header{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	padding-top: 20px;
+}
+
+.message{
+	width: 100%;
+	height: 40px;
+	padding-top: 10px;
+	background: transparent;
+	line-height: 40px;
+	display: none;
+	font-size: 20px;
+}
+
+
+.content{
+	width: 75%;
+	height: auto;
+	padding: 20px;
+	background: transparent;
+	margin: auto;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+.footer {
+   bottom: 0px;
+   height: 30px;
+   width: 100%;
+   line-height: 30px;
+}
+
+h1{
+	margin: 0;
+	font-weight: normal;
+}
+h2{
+	font-size: 20px;
+	border-bottom: 2px solid #fff;
+	font-weight: normal;
+}
+
+table {
+	width: 100%;
+	table-layout:fixed;
+    border-collapse: collapse;
+}
+
+th {
+    border: 1px solid #fff;
+    text-align: left;
+    padding: 8px;
+    font-weight: bold;
+}
+td {
+    border: 1px solid #fff;
+    text-align: left;
+    padding: 8px;
+    font-weight: normal;
+}
+form{
+	margin: 0;
+}
+
+a:visited, a:link, a:active{
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+	text-decoration: underline;
+}

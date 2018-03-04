@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block content_header %}
+<h2> Manage </h2>
+{% endblock %}
+{% block content %}
+	<h3> Edit report </h3>
+	<form method="POST">
+	    Unit: <input name="unit" value="{{report[1]}}" placeholder="Ex: CDJ 2000" required> &nbsp&nbsp&nbsp
+	    Status:
+		<select name="status">
+			{% for option in status_options %}
+				<option value="{{option}}" {% if option == report[2] %} selected {% endif %}>{{option}}</option>
+			{% endfor %}
+		</select> &nbsp&nbsp&nbsp
+	    Description: <input name="desc" value="{{report[3]}}" placeholder="Ex: Cue button laggy" required>	&nbsp&nbsp&nbsp
+	    <input name="id" value="{{report[0]}}" type="hidden">
+	    <button type="submit" name="btn" value="update">Update</button>
+	</form> <br><br>
+	<button onclick="window.location='/manage';">Go Back</button>
+{% endblock %}
