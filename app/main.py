@@ -27,7 +27,7 @@ def manage():
 		report = [str(getNextID()), request.form['unit'], request.form['status'], request.form['desc'], time]
 		reports.append(report)
 		saveToCsvFile()
-		return render_template('manage.html', report=report, reports=reports, status_options=status_options, message="Added")
+		return render_template('manage.html', reports=reports, status_options=status_options, message="Added unit " + report[1])
 
 	# If a report is to be edited, show an edit page
 	elif request.form['btn'] == 'edit':
@@ -39,7 +39,7 @@ def manage():
 		report = eval(request.form['report']) # Convert the report to a list
 		reports.remove(report)
 		saveToCsvFile()
-		return render_template('manage.html', report=report, reports=reports, status_options=status_options, message="Removed")
+		return render_template('manage.html', reports=reports, status_options=status_options, message="Removed unit " + report[1])
 
 	# An edited report is updated
 	elif request.form['btn'] == 'update':
@@ -49,8 +49,21 @@ def manage():
 				report[1] = request.form['unit']
 				report[2] = request.form['status']
 				report[3] = request.form['desc']
-				return render_template('manage.html', report=report, reports=reports, status_options=status_options, message="Updated")
-			
+				return render_template('manage.html', reports=reports, status_options=status_options, message="Updated unit " + report[1])
+
+	# The sort order of the front page is changed
+	elif request.form['btn'] == 'sort':
+		sortOn = request.form['sort']
+		if sortOn == 'id':
+			reports.sort(key=lambda x: x[0])
+		elif sortOn == 'unit':
+			reports.sort(key=lambda x: x[1])
+		elif sortOn == 'status':
+			reports.sort(key=lambda x: x[2])
+		elif sortOn == 'date':
+			reports.sort(key=lambda x: x[4])
+		return render_template('manage.html', reports=reports, status_options=status_options, message="Sorting reports on " + sortOn)
+
 
 # This could be improved I guess, hash-solution to get unique IDs
 def getNextID():
@@ -78,7 +91,6 @@ def readCsvFile():
 	except FileNotFoundError:
 		file = open(app.config['CSV_FILE'], 'w')
 	return results
-	
 
 # Server start
 if __name__ == "__main__":

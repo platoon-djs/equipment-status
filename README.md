@@ -22,4 +22,5 @@ or
 Stuff should now be running at [http://localhost:5000](http://localhost:5000). 
 To manage reports, visit [http://localhost:5000/manage](http://localhost:5000/manage).
 
-
+### Dev
+To setup dev environment, do a manual build and then run `make dev`. This ensures that edited files are automatically copied to the docker container once they're saved.

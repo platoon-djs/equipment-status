@@ -8,7 +8,7 @@
 				$('.message').delay(4000).fadeOut('slow');
 			});
 		</script>
-		{{message}} unit "{{report[1]}}"
+		{{message}}
 	{% endif %}
 {% endblock %}
 
@@ -52,4 +52,15 @@
 			</tr>
 		{% endfor %}
 	</table> 
+	<br>
+
+	<h2> Frontpage settings </h2>
+	<h3> Sort on </h3>
+	<form method="POST">
+		<input type="radio" name="sort" value="id"> ID &nbsp&nbsp&nbsp
+  		<input type="radio" name="sort" value="unit"> Unit &nbsp&nbsp&nbsp
+  		<input type="radio" name="sort" value="status"> Status &nbsp&nbsp&nbsp
+  		<input type="radio" name="sort" value="date"> Date &nbsp&nbsp&nbsp
+		<button type="submit" name="btn" value="sort">Save</button>
+	</form>
 {% endblock %}
