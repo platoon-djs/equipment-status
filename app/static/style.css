@@ -1,8 +1,7 @@
-/* Color scheme generated from: https://coolors.co/75b9be-a8ccc9-b3d6c6-dceab2-c7d66d */
 html {
-	background: #B3D6C6;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #75B9BE, #C7D66D);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #75B9BE, #C7D66D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #fc6622;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #fc6622, #68993a);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #fc6622, #68993a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 body{
 	width: 100%;
@@ -13,14 +12,12 @@ body{
     color: #fff;
     font-weight: normal;
 }
-
 .header{
 	width: 100%;
 	height: 50px;
 	line-height: 50px;
 	padding-top: 20px;
 }
-
 .message{
 	width: 100%;
 	height: 40px;
@@ -30,8 +27,6 @@ body{
 	display: none;
 	font-size: 20px;
 }
-
-
 .content{
 	width: 75%;
 	height: auto;
@@ -41,14 +36,12 @@ body{
 	margin-top: 0px;
 	margin-bottom: 20px;
 }
-
 .footer {
    bottom: 0px;
    height: 30px;
    width: 100%;
    line-height: 30px;
 }
-
 h1{
 	margin: 0;
 	font-weight: normal;
